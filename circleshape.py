@@ -16,3 +16,11 @@ class CircleShape(pygame.sprite.Sprite):
     
     def update(self, dt):
         pass
+    
+    def check_collision(self, circle_2):
+        distance = pygame.math.Vector2.distance_to(self.position, circle_2.position)
+        
+        if distance <= (self.radius + circle_2.radius):
+            return True
+        else:
+            return False
